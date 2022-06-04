@@ -37,7 +37,7 @@ class addQuickDriver(bpy.types.Operator):
         bpy.context.selected_pose_bones[1].rotation_mode = "XYZ"
         return {"FINISHED"}
 
-class HelloWorldPanel(bpy.types.Panel):
+class QuickTwistPanel(bpy.types.Panel):
     """Creates a Panel in the Object properties window"""
     bl_label = "Quick Twist Drivers"
     bl_idname = "OBJECT_PT_hello"
@@ -101,7 +101,7 @@ class driverPrefs(bpy.types.PropertyGroup):
         default=0.5,
         )
 
-cls = (addQuickDriver,HelloWorldPanel,driverPrefs)
+cls = (addQuickDriver,QuickTwistPanel,driverPrefs)
 
 def register():
     for c in cls:
