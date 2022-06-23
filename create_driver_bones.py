@@ -30,6 +30,7 @@ if bpy.context.mode == "EDIT_ARMATURE" and bones and armature.type == "ARMATURE"
             driverBone.matrix = bone.matrix.copy()
             driverBone.parent = bone.parent
             
+            driverBone.inherit_scale = armature.data.edit_bones[bone.name].inherit_scale
             # Move to second bone layer
             driverBone.layers[1] = True
             driverBone.layers[0] = False
