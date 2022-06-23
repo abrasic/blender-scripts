@@ -58,3 +58,7 @@ if bpy.context.mode == "EDIT_ARMATURE" and bones and armature.type == "ARMATURE"
         rotConst.mix_mode = 'ADD'
         rotConst.target_space = 'LOCAL'
         rotConst.owner_space = 'LOCAL'
+        
+        locConst = bone.constraints.new(type='COPY_LOCATION')
+        locConst.target = armature
+        locConst.subtarget = bone.name + ".Driver"
