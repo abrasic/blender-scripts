@@ -62,3 +62,5 @@ if bpy.context.mode == "EDIT_ARMATURE" and bones and armature.type == "ARMATURE"
         locConst = bone.constraints.new(type='COPY_LOCATION')
         locConst.target = armature
         locConst.subtarget = bone.name + ".Driver"
+        locConst.target_space = "LOCAL"
+        locConst.owner_space = "LOCAL"
